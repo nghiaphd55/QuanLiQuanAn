@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản Lý Quán Ăn - Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">🍗</div>
+        <div>
+          <strong>QUẢN LÝ QUÁN ĂN</strong>
+          <small>Restaurant Manager</small>
+        </div>
+      </div>
+
+      <nav id="mainNav">
+        <button class="nav-item active" data-page="dashboard"><span>▦</span> Dashboard</button>
+        <button class="nav-item" data-page="orders"><span>🧾</span> Đơn hàng</button>
+        <button class="nav-item" data-page="tables"><span>🪑</span> Bàn ăn</button>
+        <button class="nav-item" data-page="foods"><span>🍜</span> Món ăn</button>
+        <button class="nav-item" data-page="customers"><span>👥</span> Khách hàng</button>
+        <button class="nav-item" data-page="expenses"><span>💸</span> Chi tiêu</button>
+        <button class="nav-item" data-page="revenue"><span>💰</span> Doanh thu</button>
+        <button class="nav-item" data-page="reports"><span>📊</span> Báo cáo</button>
+        <button class="nav-item" data-page="settings"><span>⚙</span> Cài đặt</button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="online-dot"></div>
+        Hệ thống đang hoạt động
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h1 id="pageTitle">Tổng quan hôm nay</h1>
+          <p id="pageSubtitle">Theo dõi tình hình kinh doanh của quán</p>
+        </div>
+        <div class="top-actions">
+          <div class="date-pill">📅 <span id="today"></span></div>
+          <button class="icon-btn" title="Thông báo">🔔<i></i></button>
+          <div class="owner">
+            <div class="avatar">👨‍🍳</div>
+            <div><strong>Chủ quán</strong><small>Quản trị viên</small></div>
+          </div>
+        </div>
+      </header>
+
+      <section id="content"></section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="orderModal">
+    <div class="modal">
+      <div class="modal-head">
+        <h2>➕ Tạo đơn hàng</h2>
+        <button class="close" id="closeModal">×</button>
+      </div>
+      <label>Bàn số
+        <select id="orderTable">
+          <option value="1">Bàn 1</option><option value="2">Bàn 2</option><option value="3">Bàn 3</option><option value="4">Bàn 4</option><option value="5">Bàn 5</option><option value="6">Bàn 6</option><option value="7">Bàn 7</option>
+        </select>
+      </label>
+      <label>Tên món
+        <select id="orderFood">
+          <option>Mì Quảng</option>
+          <option>Bún</option>
+          <option>Bánh ướt</option>
+          <option>Bánh mì heo quay</option>
+          <option>Bánh mì bò kho</option>
+          <option>Sữa đậu nành</option>
+        </select>
+      </label>
+      <label>Số lượng
+        <input id="orderQty" type="number" min="1" value="1">
+      </label>
+      <label>Khách hàng
+        <input id="orderCustomer" placeholder="Tên khách hàng (không bắt buộc)">
+      </label>
+      <button class="primary full" id="saveOrder">Lưu đơn hàng</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
